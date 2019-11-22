@@ -1,0 +1,12 @@
+nav {
+}
+
+nav span{
+    cursor: pointer;
+}
+
+nav span:last-child{
+    float: right;
+    right: 0;
+    position: relative;
+}

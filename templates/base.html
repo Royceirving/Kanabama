@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Kanabama</title>
+        <link rel="stylesheet" href="/static/style.css">
+        <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+    </head>
+    <body>
+        {% block navbar %}
+        <nav>
+            <span onclick="location.href='{{ url_for('index') }}';">
+                Home
+            </span>
+            <span>
+                Page1
+            </span>
+            <span>
+                <a href="{{ url_for('login') }}">Login</a> |
+                <a href="{{ url_for('signup') }}">Sign Up</a>
+            </span>
+        </nav>
+        {% endblock %}
+
+        {% block content %}
+        default content
+        {% endblock %}
+
+        {% block footer %}
+        <footer>
+            
+        </footer>
+        {% endblock %}
+    </body>
+</html>
