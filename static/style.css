@@ -1,8 +1,19 @@
 nav {
+    background-color: blue ;
+    color:white;
 }
 
-nav span{
+nav a:visited{
+    text-decoration-style: none;
+}
+
+nav a{
+    color:white;
+}
+
+nav span, nav a{
     cursor: pointer;
+    padding: 5px;
 }
 
 nav span:last-child{

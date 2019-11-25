@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% from "_formhelpers.html" import render_field %}
+{% block content %}
+    <h1>New Story</h1>
+    <form action="/newstory" method="POST">
+        {{ form.hidden_tag() }}
+        {{ render_field(form.name_field) }}
+        <br>
+        {{ render_field(form.description_field)}}
+        <br>
+        {{ render_field(form.date_field) }}
+        <br>
+        {{ render_field(form.priority_field) }}
+        <br>
+        {{ form.submit() }}
+    </form>
+    
+{% endblock %}

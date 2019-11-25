@@ -10,8 +10,11 @@
             <span onclick="location.href='{{ url_for('index') }}';">
                 Home
             </span>
-            <span>
-                Page1
+            <span onclick="location.href='{{ url_for('storyboard') }}';">
+                Storyboard
+            </span>
+            <span onclick="location.href='{{ url_for('newstory') }}';">
+                New Story
             </span>
             <span>
                 <a href="{{ url_for('login') }}">Login</a> |
