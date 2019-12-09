@@ -1,4 +1,5 @@
 from flask import Flask, request, Response, render_template
+from flask_login import LoginManager
 import requests
 import itertools
 from flask_wtf.csrf import CSRFProtect
@@ -8,9 +9,11 @@ from wtforms.validators import Regexp
 import re
 
 csrf = CSRFProtect()
+login_manager = LoginManager()
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "row the boat"
 csrf.init_app(app)
+login_manager.init_app(app)
 
 priority_levels = [(0,"High"),(1,"Medium"),(2,"Low")]
 
@@ -23,7 +26,7 @@ class NewStoryForm(FlaskForm):
 
     description_field = TextAreaField(u'Description: ')
     
-    date_field = DateField(u'Due Date: ',format='%m-%d-%Y')
+    date_field = DateField(u'Due Date: ',format='%m-%d-%Y', render_kw={"placeholder": 'mm-dd-yyyy'})
 
     submit = SubmitField(u'Create')
 
@@ -52,7 +55,12 @@ def newstory():
         priority = form.priority_field.data
 
         date = form.date_field.data;
+        
+        print(story_name)
+        print(description)
+        print(priority)
         print(date)
+        
         return render_template('/storyboard.html')
     else:
         return render_template('/newstory.html',form=form)
