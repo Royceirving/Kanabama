@@ -1,8 +1,10 @@
+{% from "_formhelpers.html" import render_field %}
 <html>
     <head>
         <title>Kanabama</title>
         <link rel="stylesheet" href="/static/style.css">
         <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     </head>
     <body>
         {% block navbar %}
@@ -10,15 +12,23 @@
             <span onclick="location.href='{{ url_for('index') }}';">
                 Home
             </span>
+            {% if current_user.is_active %}
             <span onclick="location.href='{{ url_for('storyboard') }}';">
                 Storyboard
             </span>
             <span onclick="location.href='{{ url_for('newstory') }}';">
                 New Story
             </span>
+            {% endif %}
             <span>
-                <a href="{{ url_for('login') }}">Login</a> |
-                <a href="{{ url_for('signup') }}">Sign Up</a>
+                {% if not current_user.is_active %}
+                <a href="{{ url_for('login') }}">Login</a> 
+                |<a href="{{ url_for('signup') }}">Sign Up</a>
+                {% endif %}
+                {% if current_user.is_active %}
+                <span>Hello {{current_user.username}} | </span> 
+                <a href="{{ url_for('logout') }}">Log Out</a> 
+                {% endif %}
             </span>
         </nav>
         {% endblock %}

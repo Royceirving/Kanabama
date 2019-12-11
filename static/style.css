@@ -1,6 +1,9 @@
 nav {
-    background-color: blue ;
+    background-color: #000077 ;
     color:white;
+    height: 2em;
+    position: relative;
+    padding-top: 1em;
 }
 
 nav a:visited{
@@ -9,15 +12,35 @@ nav a:visited{
 
 nav a{
     color:white;
+    height: 100%;
+    
 }
 
-nav span, nav a{
+nav span, nav a
+{
     cursor: pointer;
-    padding: 5px;
+    padding-left: 5px;
+    position: relative;
+}
+
+nav span:last-child span{
+    cursor: default;
 }
 
 nav span:last-child{
     float: right;
-    right: 0;
-    position: relative;
+    right: 1em;
+
+}
+
+.story{
+    border: solid black 3px;
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.story h2{
+    margin-top: 5px;
+    margin-bottom: 10px;
 }

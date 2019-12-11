@@ -3,4 +3,15 @@
 {% block content %}
     <h1>Storyboard</h1>
 
+    {% for story in stories %}
+        <div id={{story[0]}} class="story">
+            <h2>{{story[1]}}</h2>
+            {{story[2]}}<br>
+            Priority:{{story[3]}}<br>
+            Due:{{story[4]}}<br>
+            <button onclick="delete_story({{story[0]}})">Delete</button>
+            
+        </div>
+    {% endfor %}
+
 {% endblock %}
