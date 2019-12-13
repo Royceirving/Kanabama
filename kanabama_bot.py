@@ -23,4 +23,4 @@ async def on_ready():
     print("Kanabama Bot Running")
     await client.change_presence(status=discord.Status.idle,activity=discord.Game(name="Prefix: *"))
 
-client.run("NTA1NDY3NTE1OTA5MTc3Mzk2.D0NyMQ.R6LkCyP0S-mMLC7lzI5inA57jZc")
+client.run("NjU1MTc2MDM1ODg4NzkxNTY3.XfQb3g.fInCvwdnY9U38t7CIGXk6RlaeMw")
