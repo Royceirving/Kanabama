@@ -45,3 +45,6 @@ def commit_story_generator(team_name,story_name,description="",priority=0,date='
 
 def delete_story_in_team_generator(team_name,story_id):
     return "DELETE FROM {} WHERE id == {}".format(team_name,story_id)
+
+def update_story_to_state_in_team_generator(team_name,story_id,state):
+    return "UPDATE {} SET state={} WHERE id == {}".format(team_name,state,story_id)

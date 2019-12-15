@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% from "_formhelpers.html" import render_field %}
 {% block content %}
-    <h1>Storyboard</h1>
+    <h1>{{current_user.teamname}}: Storyboard</h1>
 
     {% for story in stories %}
         <div id={{story[0]}} class="story">
@@ -9,6 +9,10 @@
             {{story[2]}}<br>
             Priority:{{story[3]}}<br>
             Due:{{story[4]}}<br>
+            State: {{story[5]}}
+            <button onclick="update_story('{{story[0]}}+{{story[5]-1}}')">-</button>
+            <button onclick="update_story('{{story[0]}}+{{story[5]+1}}')" >+</button>
+            <br>
             <button onclick="delete_story({{story[0]}})">Delete</button>
             
         </div>

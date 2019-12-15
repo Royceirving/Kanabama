@@ -21,3 +21,10 @@ function toggle_signup(){
         document.getElementById("team_config").innerHTML="Join Team";
     }
 }
+
+function update_story(story_id_and_place){
+    console.log(story_id_and_place);
+    $.get( "/updatestory/"+story_id_and_place, function (){
+        window.location.reload();
+    });
+}
