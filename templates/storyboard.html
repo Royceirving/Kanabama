@@ -6,55 +6,63 @@
     <h1 class="header">Storyboard</h1>
 
     <div class="page-div" id="page-div">
-      <div class="kan-col" id="backlog-col">
+      <div class="kan-col" id="backlog-col" ondrop="drop(event)" ondragover="allowDrop(event)" value="0">
         <h2 class="kan-col-header">Backlog</h2>
         {% for story in stories %}
-          <div id={{story[0]}} class="story">
+          {% if story[5] == 0 %}
+          <div id={{story[0]}} class="story" draggable="true" ondragstart="drag(event)">
             <h3>{{story[1]}}</h3>
             <p class="story-p">{{story[2]}}</p>
-            <p class="story-p">Priority:{{story[3]}}</p>
-            <p class="story-p">Due:{{story[4]}}</p>
+            <p class="story-p">Priority: {{story[3]}}</p>
+            <p class="story-p">Due: {{story[4]}}</p>
             <div class="story-p" id="delete-button" onclick="delete_story({{story[0]}})">Delete</div>
           </div>
+          {% endif %}
         {% endfor %}
       </div>
 
-      <div class="kan-col" id="progress-col">
+      <div class="kan-col" id="progress-col" ondrop="drop(event)" ondragover="allowDrop(event)" value="1" >
         <h2 class="kan-col-header">Progress</h2>
         {% for story in stories %}
-          <div id={{story[0]}} class="story">
+          {% if story[5] == 1 %}
+          <div id={{story[0]}} class="story" draggable="true" ondragstart="drag(event)">
             <h3>{{story[1]}}</h3>
             <p class="story-p">{{story[2]}}</p>
-            <p class="story-p">Priority:{{story[3]}}</p>
-            <p class="story-p">Due:{{story[4]}}</p>
+            <p class="story-p">Priority: {{story[3]}}</p>
+            <p class="story-p">Due: {{story[4]}}</p>
             <div class="story-p" id="delete-button" onclick="delete_story({{story[0]}})">Delete</div>
           </div>
+        {% endif %}
         {% endfor %}
       </div>
 
-      <div class="kan-col" id="review-col">
+      <div class="kan-col" id="review-col" ondrop="drop(event)" ondragover="allowDrop(event)" value="2">
         <h2 class="kan-col-header">Review</h2>
         {% for story in stories %}
-          <div id={{story[0]}} class="story">
+          {% if story[5] == 2 %}
+          <div id={{story[0]}} class="story" draggable="true" ondragstart="drag(event)">
             <h3>{{story[1]}}</h3>
             <p class="story-p">{{story[2]}}</p>
-            <p class="story-p">Priority:{{story[3]}}</p>
-            <p class="story-p">Due:{{story[4]}}</p>
+            <p class="story-p">Priority: {{story[3]}}</p>
+            <p class="story-p">Due: {{story[4]}}</p>
             <div class="story-p" id="delete-button" onclick="delete_story({{story[0]}})">Delete</div>
           </div>
+          {% endif %}
         {% endfor %}
       </div>
 
-      <div class="kan-col" id="done-col">
+      <div class="kan-col" id="done-col" ondrop="drop(event)" ondragover="allowDrop(event)" value="3">
         <h2 class="kan-col-header">Done</h2>
         {% for story in stories %}
-          <div id={{story[0]}} class="story">
+          {% if story[5] == 3 %}
+          <div id={{story[0]}} class="story" draggable="true" ondragstart="drag(event)">
             <h3>{{story[1]}}</h3>
             <p class="story-p">{{story[2]}}</p>
-            <p class="story-p">Priority:{{story[3]}}</p>
-            <p class="story-p">Due:{{story[4]}}</p>
+            <p class="story-p">Priority: {{story[3]}}</p>
+            <p class="story-p">Due: {{story[4]}}</p>
             <div class="story-p" id="delete-button" onclick="delete_story({{story[0]}})">Delete</div>
           </div>
+          {% endif %}
         {% endfor %}
       </div>
 

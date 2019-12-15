@@ -193,6 +193,17 @@ def storyboard():
 
     resp = cursor.execute(get_stories_for_team(current_user.teamname))
     stories = resp.fetchall()
+    outp = []
+    for story in stories:
+        temp = list(story)
+        if(temp[3] == 0):
+            temp[3] = "High"
+        if(temp[3] == 1):
+            temp[3] = "Medium"
+        if(temp[3] == 2):
+            temp[3] = "Low"
+        outp.append(temp)
+    stories = tuple(outp)
     return render_template('/storyboard.html', stories=stories)
 
 
