@@ -45,7 +45,13 @@ function drop(e) {
     e.preventDefault();
     var data = e.dataTransfer.getData("move");
     e.target.appendChild(document.getElementById(data));
-    var s = data+"+"+state_switch(e.target.id);
+    var s = data+"+";
+    if(e.target.id.includes("-col")){
+        s = s + String(state_switch(e.target.id));
+    }
+    else{
+        s = s + state_switch(e.target.parentElement.parentElement.id);
+    }
     update_story(s);
 }
 

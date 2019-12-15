@@ -48,9 +48,9 @@ nav li:last-child{
 .story {
     border: solid black 3px;
     border-radius: 10px;
-    margin: 5px;
+    margin: 5px auto;
     position: relative;
-    width: calc(100% - 10px);
+    width: 95%;
 }
 
 .story h3{
