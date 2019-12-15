@@ -19,30 +19,35 @@ html, body {
   grid-template-columns: repeat(4, 600px);
   grid-template-rows: 1fr;
   overflow-x: scroll;
+  overflow-y: hidden;
   width: 100%;
-  height: 100%;
+  height: 85%;
 }
 
 #backlog-col {
   background-color: Brown;
   width: 100%;
   height: 100%;
+  overflow-y: scroll;
 }
 
 #progress-col {
   background-color: Olive;
   width: 100%;
   height: 100%;
+  overflow-y: scroll;
 }
 
 #review-col {
   background-color: BlueViolet;
   width: 100%;
   height: 100%;
+  overflow-y: scroll;
 }
 
 #done-col {
   background-color: Crimson;
   width: 100%;
   height: 100%;
+  overflow-y: scroll;
 }
