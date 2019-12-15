@@ -1,0 +1,53 @@
+html, body {
+  overflow-y: hidden;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+#body-div {
+  top: 3em;
+}
+
+.header {
+  position: relative;
+}
+
+#page-div {
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  width: 100%;
+  height: 85%;
+}
+
+.kan-col {
+  width: 100%;
+  min-width: 600px;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.kan-col-header {
+  padding-left: 2.5px;
+}
+
+#backlog-col {
+  background-color: Brown;
+}
+
+#progress-col {
+  background-color: Olive;
+}
+
+#review-col {
+  background-color: BlueViolet;
+}
+
+#done-col {
+  background-color: Crimson;
+}

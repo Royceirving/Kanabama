@@ -8,29 +8,30 @@
     </head>
     <body>
         {% block navbar %}
-        <nav>
-            <span onclick="location.href='{{ url_for('index') }}';">
+        <div id="nav-div">
+        <nav id="nav">
+          <ul id="nav-ul">
+            <li class="li-button" onclick="location.href='{{ url_for('index') }}';">
                 Home
-            </span>
+            </li>
             {% if current_user.is_active %}
-            <span onclick="location.href='{{ url_for('storyboard') }}';">
+            <li class="li-button" onclick="location.href='{{ url_for('storyboard') }}';">
                 Storyboard
-            </span>
-            <span onclick="location.href='{{ url_for('newstory') }}';">
+            </li>
+            <li class="li-button" onclick="location.href='{{ url_for('newstory') }}';">
                 New Story
-            </span>
+            </li>
             {% endif %}
-            <span>
                 {% if not current_user.is_active %}
                 <a href="{{ url_for('login') }}">Login</a> 
                 |<a href="{{ url_for('signup') }}">Sign Up</a>
                 {% endif %}
                 {% if current_user.is_active %}
-                <span>Hello {{current_user.username}} | </span> 
-                <a href="{{ url_for('logout') }}">Log Out</a> 
+                <li>Hello {{current_user.username}} | <a href="{{ url_for('logout') }}">Log Out</a></li>  
                 {% endif %}
-            </span>
+          </ul>
         </nav>
+        </div>
         {% endblock %}
 
         {% block content %}
