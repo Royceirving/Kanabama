@@ -181,7 +181,7 @@ def newstory():
         ))
         conn.commit()
         
-        return storyboard() #throw them to the storyboard
+        return redirect('/storyboard')
     else:
         return render_template('/newstory.html',form=form)
         
