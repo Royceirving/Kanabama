@@ -218,6 +218,10 @@ def updatestory(story_id_and_place):
     data = story_id_and_place.split('+')
     story_id = int(data[0])
     state = int(data[1])
+    if(state <= 0):
+        state = 0
+    elif(state >= 3):
+        state = 3
 
     try:
         conn = sqlite3.connect(DATABASE_FILENAME)
