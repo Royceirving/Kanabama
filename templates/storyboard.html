@@ -7,9 +7,10 @@
 
     <div class="page-div" id="page-div">
       <div class="kan-col" id="backlog-col">
+        <h2 class="kan-col-header">Backlog</h2>
         {% for story in stories %}
           <div id={{story[0]}} class="story">
-            <h2>{{story[1]}}</h2>
+            <h3>{{story[1]}}</h3>
             <p class="story-p">{{story[2]}}</p>
             <p class="story-p">Priority:{{story[3]}}</p>
             <p class="story-p">Due:{{story[4]}}</p>
@@ -19,18 +20,42 @@
       </div>
 
       <div class="kan-col" id="progress-col">
-        <div>
-        </div>
+        <h2 class="kan-col-header">Progress</h2>
+        {% for story in stories %}
+          <div id={{story[0]}} class="story">
+            <h3>{{story[1]}}</h3>
+            <p class="story-p">{{story[2]}}</p>
+            <p class="story-p">Priority:{{story[3]}}</p>
+            <p class="story-p">Due:{{story[4]}}</p>
+            <div class="story-p" id="delete-button" onclick="delete_story({{story[0]}})">Delete</div>
+          </div>
+        {% endfor %}
       </div>
 
       <div class="kan-col" id="review-col">
-        <div>
-        </div>
+        <h2 class="kan-col-header">Review</h2>
+        {% for story in stories %}
+          <div id={{story[0]}} class="story">
+            <h3>{{story[1]}}</h3>
+            <p class="story-p">{{story[2]}}</p>
+            <p class="story-p">Priority:{{story[3]}}</p>
+            <p class="story-p">Due:{{story[4]}}</p>
+            <div class="story-p" id="delete-button" onclick="delete_story({{story[0]}})">Delete</div>
+          </div>
+        {% endfor %}
       </div>
 
       <div class="kan-col" id="done-col">
-        <div>
-        </div>
+        <h2 class="kan-col-header">Done</h2>
+        {% for story in stories %}
+          <div id={{story[0]}} class="story">
+            <h3>{{story[1]}}</h3>
+            <p class="story-p">{{story[2]}}</p>
+            <p class="story-p">Priority:{{story[3]}}</p>
+            <p class="story-p">Due:{{story[4]}}</p>
+            <div class="story-p" id="delete-button" onclick="delete_story({{story[0]}})">Delete</div>
+          </div>
+        {% endfor %}
       </div>
 
     </div>

@@ -48,12 +48,13 @@ nav li:last-child{
 .story {
     border: solid black 3px;
     border-radius: 10px;
-    margin: 5px;
-    display: relative;
+    margin: 0 5px;
+    position: relative;
+    width: calc(100% - 10px);
 }
 
-.story h2{
-    margin: 5px 10px 5px;
+.story h3{
+    margin: 5px 10px;
 }
 
 .story p {

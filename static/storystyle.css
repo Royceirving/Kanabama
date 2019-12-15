@@ -24,6 +24,10 @@ html, body {
   height: 85%;
 }
 
+.kan-col-header {
+  padding-left: 2.5px;
+}
+
 #backlog-col {
   background-color: Brown;
   width: 100%;
