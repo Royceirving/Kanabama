@@ -1,17 +1,38 @@
 {% extends "base.html" %}
 {% from "_formhelpers.html" import render_field %}
 {% block content %}
-    <h1>Storyboard</h1>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='storystyle.css') }}">
+  <div id="body-div">
+    <h1 class="header">Storyboard</h1>
 
-    {% for story in stories %}
-        <div id={{story[0]}} class="story">
+    <div class="page-div" id="page-div">
+      <div class="kan-col" id="backlog-col">
+        {% for story in stories %}
+          <div id={{story[0]}} class="story">
             <h2>{{story[1]}}</h2>
-            {{story[2]}}<br>
-            Priority:{{story[3]}}<br>
-            Due:{{story[4]}}<br>
-            <button onclick="delete_story({{story[0]}})">Delete</button>
-            
-        </div>
-    {% endfor %}
+            <p class="story-p">{{story[2]}}</p>
+            <p class="story-p">Priority:{{story[3]}}</p>
+            <p class="story-p">Due:{{story[4]}}</p>
+            <div class="story-p" id="delete-button" onclick="delete_story({{story[0]}})">Delete</div>
+          </div>
+        {% endfor %}
+      </div>
 
+      <div class="kan-col" id="progress-col">
+        <div>
+        </div>
+      </div>
+
+      <div class="kan-col" id="review-col">
+        <div>
+        </div>
+      </div>
+
+      <div class="kan-col" id="done-col">
+        <div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 {% endblock %}

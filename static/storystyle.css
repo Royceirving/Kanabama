@@ -1,0 +1,48 @@
+html, body {
+  overflow-y: hidden;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+#body-div {
+  top: 3em;
+}
+
+.header {
+  position: relative;
+}
+
+#page-div {
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(4, 600px);
+  grid-template-rows: 1fr;
+  overflow-x: scroll;
+  width: 100%;
+  height: 100%;
+}
+
+#backlog-col {
+  background-color: Brown;
+  width: 100%;
+  height: 100%;
+}
+
+#progress-col {
+  background-color: Olive;
+  width: 100%;
+  height: 100%;
+}
+
+#review-col {
+  background-color: BlueViolet;
+  width: 100%;
+  height: 100%;
+}
+
+#done-col {
+  background-color: Crimson;
+  width: 100%;
+  height: 100%;
+}
