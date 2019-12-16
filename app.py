@@ -19,6 +19,14 @@ from loginform import LogInForm
 from newstoryform import NewStoryForm, priority_levels, priority_levels_list
 from utils import *
 
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
+
+SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY")
+if(SENDGRID_API_KEY == None):
+    import keys
+    SENDGRID_API_KEY = keys.SENDGRID_API_KEY
+
 DATABASE_FILENAME = 'app.db'
 
 csrf = CSRFProtect()
@@ -29,8 +37,6 @@ csrf.init_app(app)
 db = SQLAlchemy(app)
 login_manager = LoginManager(app)
 login_manager.init_app(app)
-
-
 
 @app.route("/")
 @app.route("/index")
@@ -172,6 +178,8 @@ def newstory():
 
         state = 0
 
+        email = form.email.data
+
         conn = sqlite3.connect(DATABASE_FILENAME)
         cursor = conn.cursor()
 
@@ -180,7 +188,22 @@ def newstory():
             priority, date, state
         ))
         conn.commit()
-        
+
+        if(email != ""):
+            message = Mail(
+                from_email='kanabama.noreply@gmail.com',
+                to_emails=email,
+                subject='New story: {}'.format(story_name),
+                html_content='''Story Created by:{}\n
+                Due Date: {}\n
+                \n\n
+                Story Description: {}'''.format(current_user.username,date,description)
+            )
+            send_grid_client = SendGridAPIClient(SENDGRID_API_KEY)
+            resp = send_grid_client.send(message)
+            if (resp.status_code != 202):
+                print("Email Failed to send")
+
         return redirect('/storyboard')
     else:
         return render_template('/newstory.html',form=form)
