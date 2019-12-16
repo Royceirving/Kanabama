@@ -76,6 +76,10 @@ html, body {
   transition-timing-function: ease-in;
 }
 
+.story p {
+  max-width: 98%;
+}
+
 #backlog-col .story:hover {
   background-color: rgba(255, 0, 0, 0.2);
 }
