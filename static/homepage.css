@@ -13,6 +13,7 @@ html, body {
 #banner-image {
   position: relative;
   margin: auto;
+  top: -4%;
   padding: 5%;
   min-width: 75%;
   max-width: 100%;
@@ -25,13 +26,14 @@ html, body {
 }
 
 @keyframes img-move {
-  from { bottom: -400%; }
-  to { bottom: 0; }
+  from { top: -400%; }
+  to { top: -4%; }
 }
 
 #text-buttons {
   position: relative;
   margin: auto;
+  top: -4%;
   padding: 5%;
   text-align: center; 
   animation-name: text-drop;
@@ -40,7 +42,7 @@ html, body {
 
 @keyframes text-drop {
   from { top: -100%; }
-  to { top: 0; }
+  to { top: -4%; }
 }
 
 .button {
