@@ -3,19 +3,28 @@
 {% block content %}
 <link rel="stylesheet" href="/static/newstorystyle.css">
     <h1 id="NSHead">New Story</h1>
+    <div class="noozstory">
     <form action="/newstory" method="POST">
         {{ form.hidden_tag() }}
         {{ render_field(form.name_field) }}
         <br>
+        <br>
         {{ render_field(form.description_field)}}
+        <br>
         <br>
         {{ render_field(form.date_field) }}
         <br>
+        <br>
         {{ render_field(form.priority_field) }}
+        <br>
         <br>
         {{ render_field(form.email) }}
         <br>
+        <br>
+        <div class="createbutton">
         {{ form.submit() }}
+      </div>
     </form>
+  </div>
 
 {% endblock %}
