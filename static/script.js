@@ -48,6 +48,8 @@ function drop(e) {
     var s = data+"+";
     if(e.target.id.includes("-col")){
         s = s + String(state_switch(e.target.id));
+    } else if (e.target.parentNode.id.includes("-col")) {
+        s = s + String(state_switch(e.target.parentNode.id));
     }
     else{
         s = s + state_switch(e.target.parentElement.parentElement.id);
