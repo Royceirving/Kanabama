@@ -18,8 +18,8 @@ html, body {
 
 div.LoginForm {
   text-align: center;
-  margin-left: 40%;
-  margin-right: 40%;
+  margin-left: auto;
+  margin-right: auto;
   font-size: 20px;
   width: 500px;
   height: 100px;
