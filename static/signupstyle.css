@@ -1,0 +1,33 @@
+html, body {
+  overflow-y: hidden;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  background-color: MidnightBlue;
+  font-family: "Helvetica", Helvetica, serif;
+  color: DarkBlue;
+}
+
+#SUHead{
+  text-align: center;
+  color: DodgerBlue;
+  font-size: 50px;
+}
+
+div.signupbox {
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20px;
+  width: 400px;
+  height: 400px;
+  border: 5px solid DodgerBlue;
+  background-color: SkyBlue;
+}
+
+div.createbutton {
+  margin-left: 1%;
+}

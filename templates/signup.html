@@ -1,29 +1,36 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>Sign up Page</h1>
+<link rel="stylesheet" href="/static/signupstyle.css">
+    <h1 id="SUHead">Sign-Up Page</h1>
+    <div class="signupbox">
     <form action="/signup" method="POST">
         {{ form.hidden_tag() }}
         {{ render_field(form.username_field) }}
         <br>
+        <br>
         {{ render_field(form.password)}}
+        <br>
         <br>
         {{ render_field(form.confirm_password)}}
         <br>
-        
+        <br>
+
         Create New Team<input type="checkbox" onclick="toggle_signup()" id="signup_checkbox">
 
         <h2 id='team_config'>Join Team</h2>
-        
+
         {{ render_field(form.team_name) }}
         <br>
         {{ render_field(form.team_password)}}
         <br>
-        <div id="create_team_div" hidden>  
+        <div id="create_team_div" hidden>
             {{ render_field(form.team_password_cofirm)}}
             <br>
         </div>
+        <br>
         {{ form.submit() }}
     </form>
+  </div>
     <div>
         {% if messages != [] %}
         <h2>Errors</h2>
