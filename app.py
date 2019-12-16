@@ -137,7 +137,7 @@ def signup():
             else: #if we are trying to join a team
                 resp = cursor.execute("SELECT name,password_hash FROM teams WHERE name == '{}'".format(teamname))
                 resp = resp.fetchall()
-                if(check_password_hash(resp[0][1],team_password)):
+                if(len(resp) < 1 or check_password_hash(resp[0][1],team_password)):
                     messages.append("Team password invalid")
         
         if(len(messages) > 0):
