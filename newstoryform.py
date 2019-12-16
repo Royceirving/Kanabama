@@ -17,6 +17,6 @@ class NewStoryForm(FlaskForm):
 
     date_field = DateField(u'Due Date: ',format='%m-%d-%Y', render_kw={"placeholder": 'mm-dd-yyyy'})
 
-    email = EmailField('Email Address: ', [validators.Email()])
+    email = EmailField('Email Address: ', [validators.Email(), validators.Optional(),])
 
     submit = SubmitField(u'Create')

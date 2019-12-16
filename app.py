@@ -167,7 +167,7 @@ def signup():
 @app.route('/newstory', methods=['POST','GET'])
 def newstory():
 
-    if(not current_user.is_valid):
+    if(not current_user.is_active):
         return redirect('/index')
 
     form = NewStoryForm()
@@ -198,9 +198,9 @@ def newstory():
                 from_email='kanabama.noreply@gmail.com',
                 to_emails=email,
                 subject='New story: {}'.format(story_name),
-                html_content='''Story Created by:{}\n
-                Due Date: {}\n
-                \n\n
+                html_content='''Story Created by:{}<br>
+                Due Date: {}<br>
+                <br><br>
                 Story Description: {}'''.format(current_user.username,date,description)
             )
             send_grid_client = SendGridAPIClient(SENDGRID_API_KEY)
