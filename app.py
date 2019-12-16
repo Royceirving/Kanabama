@@ -29,6 +29,7 @@ if(SENDGRID_API_KEY == None):
 
 DATABASE_FILENAME = 'app.db'
 
+
 csrf = CSRFProtect()
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -165,6 +166,9 @@ def signup():
 
 @app.route('/newstory', methods=['POST','GET'])
 def newstory():
+
+    if(not current_user.is_valid):
+        return redirect('/index')
 
     form = NewStoryForm()
     if form.validate_on_submit():
