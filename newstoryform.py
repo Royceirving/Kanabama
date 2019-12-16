@@ -10,13 +10,13 @@ priority_levels_list = ["High","Medium","Low"]
 class NewStoryForm(FlaskForm):
 
     name_field = StringField(u"Story Name: ")
-    
+
     priority_field = SelectField(u"Priority: ",choices=priority_levels,coerce=int)
 
     description_field = TextAreaField(u'Description: ')
-    
+
     date_field = DateField(u'Due Date: ',format='%m-%d-%Y', render_kw={"placeholder": 'mm-dd-yyyy'})
 
-    email = EmailField('Email address', [validators.Email()])
+    email = EmailField('Email Address: ', [validators.Email()])
 
     submit = SubmitField(u'Create')
