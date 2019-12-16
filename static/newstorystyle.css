@@ -30,3 +30,21 @@ div.noozstory {
 div.createbutton {
   margin-left: 1%;
 }
+div{
+  text-align: center;
+  width: 100%;
+  display: block;
+  margin: 10px auto;
+  position: relative;
+}
+
+input, textarea{
+  margin: 0 auto;
+  border-radius: 2px;
+  border: 2px solid black;
+}
+
+textarea {
+  width: 80%;
+  min-height: 5em;
+}

@@ -6,24 +6,24 @@
     <div class="noozstory">
     <form action="/newstory" method="POST">
         {{ form.hidden_tag() }}
-        {{ render_field(form.name_field) }}
-        <br>
-        <br>
-        {{ render_field(form.description_field)}}
-        <br>
-        <br>
-        {{ render_field(form.date_field) }}
-        <br>
-        <br>
-        {{ render_field(form.priority_field) }}
-        <br>
-        <br>
-        {{ render_field(form.email) }}
-        <br>
-        <br>
+        <div>
+            {{ render_field(form.name_field) }}
+        </div>
+        <div>
+            {{ render_field(form.description_field)}}
+        </div>
+        <div>
+            {{ render_field(form.date_field) }}
+        </div>
+        <div>
+            {{ render_field(form.priority_field) }}
+        </div>
+        <div>
+            {{ render_field(form.email) }}
+        </div>
         <div class="createbutton">
-        {{ form.submit() }}
-      </div>
+            {{ form.submit() }}
+        </div>
     </form>
   </div>
 
