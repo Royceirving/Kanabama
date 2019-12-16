@@ -3,9 +3,12 @@
 {% block content %}
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='storystyle.css') }}">
   <div id="body-div">
-    <h1 class="header">Storyboard</h1>
+    <div id="header-div">
+      <h1 class="header">Storyboard</h1>
+    </div>
 
     <div class="page-div" id="page-div">
+      <span class="margin-span"></span>
       <div class="kan-col" id="backlog-col" ondrop="drop(event)" ondragover="allowDrop(event)" value="0">
         <h2 class="kan-col-header">Backlog</h2>
         {% for story in stories %}
@@ -65,7 +68,8 @@
           {% endif %}
         {% endfor %}
       </div>
-
+      <span class="margin-span"></span>
     </div>
   </div>
+
 {% endblock %}
