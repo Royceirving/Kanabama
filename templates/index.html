@@ -1,7 +1,16 @@
 {% extends "base.html" %}
 {% from "_formhelpers.html" import render_field %}
 {% block content %}
-    <div>
-        <h1>Index Page Rendered</h1>
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='homepage.css')}}">
+  <div id="body-div">
+    <div class="image-container" id="banner-image">
     </div>
+    <div id="text-buttons">
+      <h1 id="center-header">Kanabama</h1>
+      <p>Kanabama is a Kanban board designed for teams to coordinate tasks in order to complete tasks in an orderly fashion</p>
+      <p>Get started today to start working with teams!</p>
+      <div class="button" id="login"><a href="{{ url_for('login') }}">Login</a></div>
+      <div class="button" id="sign-up"><a href="{{ url_for('signup') }}">Sign Up</a></div>
+    </div>
+  </div>
 {% endblock %}
