@@ -33,6 +33,12 @@ nav li {
     cursor: default;
     display: inline-block;
     padding-left: 10px;
+    transition: transform 0.1s;
+    transition-timing-function: ease-in;
+}
+
+nav li:hover {
+    transform: scale(1.25);
 }
 
 nav li:last-child li{
@@ -73,5 +79,10 @@ nav li:last-child{
     top: -26px;
     right: 5px;
     float: right;
+}
+
+footer {
+  width: 100%;
+  height: 100px;
 }
 

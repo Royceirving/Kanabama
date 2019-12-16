@@ -3,11 +3,15 @@
 {% block content %}
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='storystyle.css') }}">
   <div id="body-div">
-    <h1 class="header">Storyboard</h1>
+    <div id="header-div">
+      <h1 class="header">Storyboard</h1>
+    </div>
 
     <div class="page-div" id="page-div">
+      <span class="margin-span"></span>
       <div class="kan-col" id="backlog-col" ondrop="drop(event)" ondragover="allowDrop(event)" value="0">
         <h2 class="kan-col-header">Backlog</h2>
+        <hr />
         {% for story in stories %}
           {% if story[5] == 0 %}
           <div id={{story[0]}} class="story" draggable="true" ondragstart="drag(event)">
@@ -21,8 +25,11 @@
         {% endfor %}
       </div>
 
+      <span class="margin-span"></span>
+
       <div class="kan-col" id="progress-col" ondrop="drop(event)" ondragover="allowDrop(event)" value="1" >
         <h2 class="kan-col-header">Progress</h2>
+        <hr />
         {% for story in stories %}
           {% if story[5] == 1 %}
           <div id={{story[0]}} class="story" draggable="true" ondragstart="drag(event)">
@@ -36,8 +43,11 @@
         {% endfor %}
       </div>
 
+      <span class="margin-span"></span>
+
       <div class="kan-col" id="review-col" ondrop="drop(event)" ondragover="allowDrop(event)" value="2">
         <h2 class="kan-col-header">Review</h2>
+        <hr />
         {% for story in stories %}
           {% if story[5] == 2 %}
           <div id={{story[0]}} class="story" draggable="true" ondragstart="drag(event)">
@@ -51,8 +61,11 @@
         {% endfor %}
       </div>
 
+      <span class="margin-span"></span>
+
       <div class="kan-col" id="done-col" ondrop="drop(event)" ondragover="allowDrop(event)" value="3">
         <h2 class="kan-col-header">Done</h2>
+        <hr />
         {% for story in stories %}
           {% if story[5] == 3 %}
           <div id={{story[0]}} class="story" draggable="true" ondragstart="drag(event)">
@@ -65,7 +78,8 @@
           {% endif %}
         {% endfor %}
       </div>
-
+      <span class="margin-span"></span>
     </div>
   </div>
+
 {% endblock %}

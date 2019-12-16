@@ -1,53 +1,105 @@
 html, body {
   overflow-y: hidden;
+  overflow-x: hidden;
   padding: 0;
   margin: 0;
+  width: 100%;
   height: 100%;
+  min-height: 100%;
 }
 
 #body-div {
-  top: 3em;
+}
+
+#header-div {
+  width: 100%;
 }
 
 .header {
   position: relative;
+  left: 1%;
+}
+
+#body-div {
 }
 
 #page-div {
   display: grid;
   position: relative;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 2% 1fr 0.5% 1fr 0.5% 1fr 0.5% 1fr 2%;
   grid-template-rows: 1fr;
-  overflow-x: scroll;
+  overflow-x: auto;
   overflow-y: hidden;
   width: 100%;
   height: 85%;
+  border-top: 2px solid rgb(0, 128, 255);
+  border-bottom: 2px solid rgb(0, 128, 255);
+}
+
+.kan-col hr {
+  border-radius: 50%;
 }
 
 .kan-col {
   width: 100%;
   min-width: 600px;
   height: 100%;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
+  border-left: 1px solid DodgerBlue;
+  border-right: 1px solid DodgerBlue;
 }
 
 .kan-col-header {
-  padding-left: 2.5px;
+  padding-left: 1.25%;
 }
 
 #backlog-col {
-  background-color: Brown;
+  background-color: rgba(150, 150, 150, 0.2);
 }
 
 #progress-col {
-  background-color: Olive;
+  background-color: rgba(150, 150, 150, 0.2);
 }
 
 #review-col {
-  background-color: BlueViolet;
+  background-color: rgba(150, 150, 150, 0.2);
 }
 
 #done-col {
-  background-color: Crimson;
+  background-color: rgba(150, 150, 150, 0.2);
 }
+
+.kan-col .story {
+  background-color: White;
+  transition: background-color 0.1s;
+  transition-timing-function: ease-in;
+}
+
+.story p {
+  max-width: 98%;
+}
+
+#backlog-col .story:hover {
+  background-color: rgba(255, 0, 0, 0.2);
+}
+
+#progress-col .story:hover {
+  background-color: rgba(255, 100, 0, 0.2);
+}
+
+#review-col .story:hover {
+  background-color: rgba(255, 255, 0, 0.2);
+}
+
+#done-col .story:hover {
+  background-color: rgba(0, 255, 0, 0.2);
+}
+
+
+
+
+
+
+
+

@@ -1,18 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>Login Page</h1>
+<link rel="stylesheet" href="/static/loginstyle.css">
+    <h1 id="LoginHeader">Kanabama Login Page</h1>
     <ul>
     {% for m in messages %}
         <li>{{ m }}</li>
     </ul>
     {%endfor%}
-
-    <form action="/login" method="POST">
+  <div class="LoginForm">
+    <form id="loginform" action="/login" method="POST">
         {{ form.hidden_tag() }}
         {{ render_field(form.username_field) }}
         <br>
         {{ render_field(form.password)}}
         <br>
+        <br>
         {{ form.submit() }}
     </form>
+  </div>
 {% endblock %}

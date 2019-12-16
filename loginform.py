@@ -6,6 +6,6 @@ class LogInForm(FlaskForm):
 
     username_field = StringField(u"Username: ")
 
-    password = PasswordField(u"Password")
+    password = PasswordField(u"Password: ")
 
     submit = SubmitField(u"Log In")
