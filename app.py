@@ -63,7 +63,7 @@ def login():
         if(user != None and check_password_hash(user.password_hash,password)):
             login_user(user)
             flash("Logged in successfully")
-            return index()
+            return redirect('/index')
         else:
             messages.append("Invalid login attempt")
             return render_template('/login.html', form=form, messages=messages)
@@ -160,7 +160,7 @@ def signup():
             else:
                 return "There was a problem signing you in..."
 
-            return index()
+            return redirect('/index')
     else:
         return render_template('/signup.html', form=form,messages=messages)
 
@@ -214,6 +214,9 @@ def newstory():
         
 @app.route('/storyboard')
 def storyboard():
+
+    if( not current_user.is_active):
+        return redirect("/index")
 
     conn = sqlite3.connect(DATABASE_FILENAME)
     cursor = conn.cursor()
