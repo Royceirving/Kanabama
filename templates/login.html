@@ -7,7 +7,7 @@
         <li>{{ m }}</li>
     </ul>
     {%endfor%}
-    <div class="LoginForm">
+  <div class="LoginForm">
     <form id="loginform" action="/login" method="POST">
         {{ form.hidden_tag() }}
         {{ render_field(form.username_field) }}
