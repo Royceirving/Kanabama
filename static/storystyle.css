@@ -26,7 +26,7 @@ html, body {
 #page-div {
   display: grid;
   position: relative;
-  grid-template-columns: 2% repeat(4, 1fr) 2%;
+  grid-template-columns: 2% 1fr 0.5% 1fr 0.5% 1fr 0.5% 1fr 2%;
   grid-template-rows: 1fr;
   overflow-x: auto;
   overflow-y: hidden;
@@ -46,6 +46,8 @@ html, body {
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
+  border-left: 1px solid DodgerBlue;
+  border-right: 1px solid DodgerBlue;
 }
 
 .kan-col-header {
@@ -54,23 +56,18 @@ html, body {
 
 #backlog-col {
   background-color: rgba(150, 150, 150, 0.2);
-  border-left: 1px solid DodgerBlue;
-  border-right: 1px solid DodgerBlue;
 }
 
 #progress-col {
   background-color: rgba(150, 150, 150, 0.2);
-  border-right: 1px solid DodgerBlue;
 }
 
 #review-col {
   background-color: rgba(150, 150, 150, 0.2);
-  border-right: 1px solid DodgerBlue;
 }
 
 #done-col {
   background-color: rgba(150, 150, 150, 0.2);
-  border-right: 1px solid DodgerBlue;
 }
 
 .kan-col .story {
