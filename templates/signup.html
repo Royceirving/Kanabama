@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="/static/signupstyle.css">
     <h1 id="SUHead">Sign-Up Page</h1>
     <div class="signupbox">
-    <form action="/signup" method="POST">
+    <form class = "form-group" action="/signup" method="POST">
         {{ form.hidden_tag() }}
         {{ render_field(form.username_field) }}
         <br>
@@ -31,7 +31,7 @@
         {{ form.submit() }}
     </form>
   </div>
-    <div>
+    <div class="error_div">
         {% if messages != [] %}
         <h2>Errors</h2>
         {% endif %}
