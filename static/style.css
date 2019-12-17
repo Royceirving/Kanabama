@@ -70,13 +70,15 @@ nav li:last-child{
 
 .story h3{
     margin: 5px 10px;
+    word-wrap: break-word;
 }
 
 .story p {
     display: block;
     position: relative;
     margin: 1px 10px;
-    width: max-content;
+    width: 100%;
+    word-wrap: break-word;
 }
 
 #delete-button {
@@ -85,7 +87,7 @@ nav li:last-child{
     padding: 2px;
     position: relative;
     background-color: White;
-    top: -26px;
+    top: -35px;
     right: 5px;
     float: right;
 }
