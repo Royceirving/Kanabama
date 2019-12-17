@@ -23,8 +23,9 @@
             </li>
             {% endif %}
                 {% if not current_user.is_active %}
-                <a href="{{ url_for('login') }}">Login</a> 
-                | <a href="{{ url_for('signup') }}">Sign Up</a>
+                <li>
+                  <a href="{{ url_for('login') }}">Login</a> | <a href="{{ url_for('signup') }}">Sign Up</a>
+                </li>
                 {% endif %}
                 {% if current_user.is_active %}
                 <li>Hello {{current_user.username}} | <a href="{{ url_for('logout') }}">Log Out</a></li>  

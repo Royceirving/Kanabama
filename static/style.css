@@ -26,6 +26,7 @@ nav ul {
 }
 
 nav a {
+    display: inline-block;
     color: White;
 }
 
