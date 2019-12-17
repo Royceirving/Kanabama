@@ -6,6 +6,7 @@ html, body {
 
 #nav-div {
     height: 3em;
+    margin: 0;
 }
 
 nav {
@@ -13,7 +14,7 @@ nav {
     color: White;
     width: 100%;
     position: fixed;
-    padding-top: 12.5px;
+    padding: 12.5px;
 }
 
 nav a:visited{
@@ -25,8 +26,9 @@ nav a {
 }
 
 nav ul {
-    padding: 0;
     display: block;
+    height: 100%;
+    width: 100%;
 }
 
 nav a {
@@ -36,6 +38,7 @@ nav a {
 
 nav li {
     display: inline-block;
+    top: -10px;
 }
 
 .li-button {
@@ -44,6 +47,7 @@ nav li {
     padding-left: 10px;
     transition: transform 0.1s;
     transition-timing-function: ease-in;
+    float: left;    
 }
 
 .li-button:hover {
