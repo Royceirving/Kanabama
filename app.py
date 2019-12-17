@@ -236,6 +236,8 @@ def storyboard():
 
 @app.route('/deletestory/<story_id>',methods=["POST","GET"])
 def deletestory(story_id):
+    if(not current_user.is_active):
+        return json.dumps({'fail':False}),500,{'ContentType':'application/json'}
     try:
 
         conn = sqlite3.connect(DATABASE_FILENAME)
@@ -251,6 +253,8 @@ def deletestory(story_id):
         
 @app.route('/updatestory/<story_id_and_place>',methods=["GET"])
 def updatestory(story_id_and_place):
+    if(not current_user.is_active):
+        return json.dumps({'fail':False}),500,{'ContentType':'application/json'}
     # text delimiter to split will be a +
     # example 5+2 => set story of id 5 to state 2
     data = story_id_and_place.split('+')
