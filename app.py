@@ -24,6 +24,7 @@ from sendgrid.helpers.mail import Mail
 
 SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY")
 if(SENDGRID_API_KEY == None):
+    print("Failed to get environment key")
     import keys
     SENDGRID_API_KEY = keys.SENDGRID_API_KEY
 
