@@ -12,12 +12,16 @@ nav {
     background-color: #000077 ;
     color: White;
     width: 100%;
-    height: 3em;
     position: fixed;
+    padding-top: 12.5px;
 }
 
 nav a:visited{
     text-decoration-style: none;
+}
+
+nav a {
+    padding-right: 1px;
 }
 
 nav ul {
