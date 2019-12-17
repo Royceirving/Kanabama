@@ -3,8 +3,6 @@ app.pyc
 databases
 __pycache__
 .DS_Store
-app.db
-*.db
 keys.py
 .nfs*
 *.pyc
