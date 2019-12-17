@@ -17,6 +17,7 @@ html, body {
 
 .header {
   position: relative;
+  padding-top: 8px;
   left: 1%;
 }
 
@@ -52,6 +53,7 @@ html, body {
 
 .kan-col-header {
   padding-left: 1.25%;
+  padding-top: 8px;
 }
 
 #backlog-col {
