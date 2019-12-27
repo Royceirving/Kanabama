@@ -12,10 +12,9 @@ if(SENDGRID_API_KEY == None):
 
 
 app = Flask(__name__)
-#csrf = CSRFProtect(app)
-
+csrf = CSRFProtect(app)
 app.config.from_object(Config)
-app.config["SECRET_KEY"] = os.getenv("FLASK_APP_KEY")
+app.config["SECRET_KEY"] = "Some random key"
 db = SQLAlchemy(app)
 login_manager = LoginManager(app)
 login_manager.init_app(app)
