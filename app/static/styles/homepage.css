@@ -20,7 +20,7 @@ html, body {
   height: 50%;
   border: 5px solid DodgerBlue;
   border-radius: 5%;
-  background-image: url("/static/storyboard.png");
+  background-image: url("/static/images/storyboard.png");
   animation-name: img-move;
   animation-duration: 4s;
 }
