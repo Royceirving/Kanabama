@@ -1,5 +1,17 @@
-   
-@app.route('/updatestory/<story_id_and_place>',methods=["GET"])
+
+
+from flask import Blueprint
+from flask_login import current_user
+
+import sqlite3
+import json
+
+from app.utils import update_story_to_state_in_team_generator
+
+
+updatestory_bp = Blueprint('updatestory',__name__)
+
+@updatestory_bp.route('/updatestory/<story_id_and_place>',methods=["GET"])
 def updatestory(story_id_and_place):
     # text delimiter to split will be a +
     # example 5+2 => set story of id 5 to state 2

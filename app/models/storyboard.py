@@ -1,3 +1,6 @@
-from sqlalchemy import Column, Integer, unique
+class Storyboard:
 
-def Storyboard
+    def __init__(self,database):
+        self.database_name = database
+
+    

@@ -2,15 +2,22 @@ from flask_login import UserMixin
 
 from app import db, login_manager
 
+from sqlalchemy import Column
+from sqlalchemy.types import Integer, String, Text
+
 class User(db.Model,UserMixin):
 
-    id = db.Column(db.Integer, primary_key=True, unique=True, nullable=False)
-    username = db.Column(db.String(64), index=True, unique=True, nullable=False)
-    password_hash = db.Column(db.String(128), nullable=False)
-    teams = db.Column(db.String(64),nullable=True)
+    id = Column(Integer, primary_key=True, unique=True, nullable=False)
+    username = Column(String(64), index=True, unique=True, nullable=False)
+    password_hash = Column(String(128), nullable=False)
+    teams = Column(Text(), nullable=True)
 
     def __repr__(self):
-        return '<User {} on team {}>'.format(self.username,self.teamname)    
+        output = "User: {}\n".format(self.username)
+        teamlist = list(self.teams.split(','))
+        for team in teamlist:
+            output = output + "> {}\n".format(team)
+        return output
 
 
 @login_manager.user_loader

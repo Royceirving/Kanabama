@@ -7,9 +7,11 @@ from flask_wtf.csrf import CSRFProtect
 
 SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY")
 if(SENDGRID_API_KEY == None):
-    from app.keys import SENDGRID_API_KEY as EMAIL_KEY
-    SENDGRID_API_KEY = EMAIL_KEY
-
+    try:
+        from app.keys import SENDGRID_API_KEY as EMAIL_KEY
+        SENDGRID_API_KEY = EMAIL_KEY
+    except ModuleNotFoundError:
+        print("Unable to get email API key")
 
 app = Flask(__name__)
 csrf = CSRFProtect(app)
@@ -18,6 +20,8 @@ app.config["SECRET_KEY"] = "Some random key"
 db = SQLAlchemy(app)
 login_manager = LoginManager(app)
 login_manager.init_app(app)
+
+from app.models import users, teams
 
 from app.routes.index import index_bp
 from app.routes.login import login_bp
@@ -28,6 +32,7 @@ app.register_blueprint(index_bp)
 app.register_blueprint(login_bp)
 app.register_blueprint(logout_bp)
 app.register_blueprint(signup_bp)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
