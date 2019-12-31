@@ -2,8 +2,8 @@
 <html>
     <head>
         <title>Kanabama</title>
-        <link rel="stylesheet" href="/static/style.css">
-        <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+        <link rel="stylesheet" href="/static/styles/style.css">
+        <script type="text/javascript" src="{{ url_for('static', filename='scripts/script.js') }}"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     </head>
     <body>
@@ -11,23 +11,23 @@
         <div id="nav-div">
         <nav id="nav">
           <ul id="nav-ul">
-            <li class="li-button" onclick="location.href='{{ url_for('index') }}';">
+            <li class="li-button" onclick="location.href='{{ url_for('index.index') }}';">
                 Home
             </li>
             {% if current_user.is_active %}
-            <li class="li-button" onclick="location.href='{{ url_for('storyboard') }}';">
+            <li class="li-button" onclick="location.href='{{ url_for('storyboard.storyboard') }}';">
                 Storyboard
             </li>
-            <li class="li-button" onclick="location.href='{{ url_for('newstory') }}';">
+            <li class="li-button" onclick="location.href='{{ url_for('newstory.newstory') }}';">
                 New Story
             </li>
             {% endif %}
                 {% if not current_user.is_active %}
-                <a href="{{ url_for('login') }}">Login</a> 
-                | <a href="{{ url_for('signup') }}">Sign Up</a>
+                <a href="{{ url_for('login.login') }}">Login</a> 
+                | <a href="{{ url_for('signup.signup') }}">Sign Up</a>
                 {% endif %}
                 {% if current_user.is_active %}
-                <li>Hello {{current_user.username}} | <a href="{{ url_for('logout') }}">Log Out</a></li>  
+                <li>Hello {{current_user.username}} | <a href="{{ url_for('logout.logout') }}">Log Out</a></li>  
                 {% endif %}
           </ul>
         </nav>
