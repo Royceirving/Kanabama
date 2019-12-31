@@ -5,14 +5,6 @@ from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf.csrf import CSRFProtect
 
-SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY")
-if(SENDGRID_API_KEY == None):
-    try:
-        from app.keys import SENDGRID_API_KEY as EMAIL_KEY
-        SENDGRID_API_KEY = EMAIL_KEY
-    except ModuleNotFoundError:
-        print("Unable to get email API key")
-
 app = Flask(__name__)
 csrf = CSRFProtect(app)
 app.config.from_object(Config)
@@ -23,15 +15,24 @@ login_manager.init_app(app)
 
 from app.models import users, teams
 
+# TODO: Find a better way to do all of these dynamic blueprint imports
 from app.routes.index import index_bp
 from app.routes.login import login_bp
 from app.routes.logout import logout_bp
 from app.routes.signup import signup_bp
+from app.routes.storyboard import storyboard_bp
+from app.routes.deletestory import deletestory_bp
+from app.routes.updatestory import updatestory_bp
+from app.routes.newstory import newstory_bp
 
 app.register_blueprint(index_bp)
 app.register_blueprint(login_bp)
 app.register_blueprint(logout_bp)
 app.register_blueprint(signup_bp)
+app.register_blueprint(storyboard_bp)
+app.register_blueprint(deletestory_bp)
+app.register_blueprint(updatestory_bp)
+app.register_blueprint(newstory_bp)
 
 
 if __name__ == "__main__":

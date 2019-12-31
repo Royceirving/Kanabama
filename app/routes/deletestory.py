@@ -1,15 +1,15 @@
 from flask import Blueprint
 from flask_login import current_user
-from utils import delete_story_in_team_generator
-from config import Config, basedir
+from app.utils import delete_story_in_team_generator
+from app.config import Config, basedir
 
 
 import json
 import sqlite3
 
-deletestory = Blueprint('deletestory',__name__,template_folder='templates',root_path=basedir)
+deletestory_bp = Blueprint('deletestory',__name__,template_folder='templates',root_path=basedir)
 
-@deletestory.route('/deletestory/<story_id>',methods=["POST","GET"])
+@deletestory_bp.route('/deletestory/<story_id>',methods=["POST","GET"])
 def deletestory(story_id):
     try:
 

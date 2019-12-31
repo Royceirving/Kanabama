@@ -1,5 +1,18 @@
+from flask import Blueprint, render_template,redirect
+from flask_login import current_user
+from sendgrid import SendGridAPIClient, Mail
 
-@app.route('/newstory', methods=['POST','GET'])
+
+import sqlite3
+
+from app.forms.newstoryform import NewStoryForm
+from app.utils import commit_story_generator
+from app.config import Config
+
+newstory_bp = Blueprint("newstory",__name__,template_folder='templates')
+
+
+@newstory_bp.route('/newstory', methods=['POST','GET'])
 def newstory():
 
     if(not current_user.is_active):
@@ -19,7 +32,7 @@ def newstory():
 
         email = form.email.data
 
-        conn = sqlite3.connect(DATABASE_FILENAME)
+        conn = sqlite3.connect(Config.DATABASE_FILENAME)
         cursor = conn.cursor()
 
         cursor.execute(commit_story_generator(
@@ -28,7 +41,7 @@ def newstory():
         ))
         conn.commit()
 
-        if(email != ""):
+        if(Config.USE_SENDGRID_API and email != ""):
             message = Mail(
                 from_email='kanabama.noreply@gmail.com',
                 to_emails=email,
@@ -38,7 +51,7 @@ def newstory():
                 <br><br>
                 Story Description: {}'''.format(current_user.username,date,description)
             )
-            send_grid_client = SendGridAPIClient(SENDGRID_API_KEY)
+            send_grid_client = SendGridAPIClient(Config.SENDGRID_API_KEY)
             resp = send_grid_client.send(message)
             if (resp.status_code != 202):
                 print("Email Failed to send")

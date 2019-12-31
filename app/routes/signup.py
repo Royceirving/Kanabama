@@ -5,6 +5,8 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import sqlite3
 
 from app.utils import *
+from app.config import Config
+from app.models.users import User
 from app.forms.signupform import SignUpForm
 
 signup_bp = Blueprint('signup',__name__, template_folder='templates')
@@ -44,7 +46,7 @@ def signup():
         if(messages == []): #if there are no errors to this point
 
 
-            conn = sqlite3.connect(DATABASE_FILENAME)
+            conn = sqlite3.connect(Config.DATABASE_FILENAME)
             cursor = conn.cursor()
 
             if(making_new_team):

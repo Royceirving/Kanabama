@@ -15,10 +15,10 @@
                 Home
             </li>
             {% if current_user.is_active %}
-            <li class="li-button" onclick="location.href='{{ url_for('home.storyboard') }}';">
+            <li class="li-button" onclick="location.href='{{ url_for('storyboard.storyboard') }}';">
                 Storyboard
             </li>
-            <li class="li-button" onclick="location.href='{{ url_for('home.newstory') }}';">
+            <li class="li-button" onclick="location.href='{{ url_for('newstory.newstory') }}';">
                 New Story
             </li>
             {% endif %}

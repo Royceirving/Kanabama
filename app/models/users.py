@@ -10,6 +10,8 @@ class User(db.Model,UserMixin):
     id = Column(Integer, primary_key=True, unique=True, nullable=False)
     username = Column(String(64), index=True, unique=True, nullable=False)
     password_hash = Column(String(128), nullable=False)
+    #TODO: Remove teamname column, hotfix
+    teamname = Column(Text())
     teams = Column(Text(), nullable=True)
 
     def __repr__(self):

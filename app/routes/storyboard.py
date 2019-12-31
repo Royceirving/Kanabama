@@ -1,11 +1,20 @@
+from flask import Blueprint, redirect, render_template
+from flask_login import current_user
 
-@app.route('/storyboard')
+import sqlite3
+
+from app.utils import get_stories_for_team
+from app.config import Config
+storyboard_bp = Blueprint('storyboard',__name__,template_folder='templates')
+
+
+@storyboard_bp.route('/storyboard')
 def storyboard():
 
     if( not current_user.is_active):
         return redirect("/index")
 
-    conn = sqlite3.connect(DATABASE_FILENAME)
+    conn = sqlite3.connect(Config.DATABASE_FILENAME)
     cursor = conn.cursor()
 
     resp = cursor.execute(get_stories_for_team(current_user.teamname))
