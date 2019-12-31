@@ -1,5 +1,4 @@
 .vscode
-app.pyc
 databases
 __pycache__
 .DS_Store
@@ -7,3 +6,4 @@ keys.py
 .nfs*
 *.pyc
 README
+app.db
