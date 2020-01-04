@@ -1,0 +1,102 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+#nav-div {
+    height: 3em;
+    margin: 0;
+}
+
+nav {
+    background-color: #000077 ;
+    color: White;
+    width: 100%;
+    position: fixed;
+    padding: 12.5px;
+}
+
+nav a:visited{
+    text-decoration-style: none;
+}
+
+nav a {
+    padding-right: 1px;
+}
+
+nav ul {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+nav a {
+    display: inline-block;
+    color: White;
+}
+
+nav li {
+    display: inline-block;
+    top: -10px;
+}
+
+.li-button {
+    cursor: default;
+    display: inline-block;
+    padding-left: 10px;
+    transition: transform 0.1s;
+    transition-timing-function: ease-in;
+    float: left;
+}
+
+.li-button:hover {
+    transform: scale(1.25);
+}
+
+nav li:last-child li{
+    cursor: default;
+}
+
+nav li:last-child{
+    padding-right: 10px;
+    float: right;
+    right: 1em;
+}
+
+.story {
+    border: solid black 3px;
+    border-radius: 10px;
+    margin: 5px auto;
+    position: relative;
+    width: 95%;
+}
+
+.story h3{
+    margin: 5px 10px;
+    word-wrap: break-word;
+}
+
+.story p {
+    display: block;
+    position: relative;
+    margin: 1px 10px;
+    width: 100%;
+    word-wrap: break-word;
+}
+
+#delete-button {
+    border: 1px solid LightSlateGray;
+    border-radius: 5px;
+    padding: 2px;
+    position: relative;
+    background-color: White;
+    top: -35px;
+    right: 5px;
+    float: right;
+}
+
+footer {
+  width: 100%;
+  height: 100px;
+}
