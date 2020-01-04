@@ -3,7 +3,7 @@
     <head>
         <title>Kanabama</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/static/style.css">
+        <link rel="stylesheet" href="/static/style.css" id='lightdarkbase'>
         <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
         <link rel="stylesheet" href="/static/styles/style.css">
         <script type="text/javascript" src="{{ url_for('static', filename='scripts/script.js') }}"></script>
@@ -26,11 +26,11 @@
             </li>
             {% endif %}
                 {% if not current_user.is_active %}
-                <a href="{{ url_for('login.login') }}">Login</a> 
+                <a href="{{ url_for('login.login') }}">Login</a>
                 | <a href="{{ url_for('signup.signup') }}">Sign Up</a>
                 {% endif %}
                 {% if current_user.is_active %}
-                <li>Hello {{current_user.username}} | <a href="{{ url_for('logout.logout') }}">Log Out</a></li>  
+                <li>Hello {{current_user.username}} | <a href="{{ url_for('logout.logout') }}">Log Out</a></li>
                 {% endif %}
           </ul>
         </nav>
@@ -43,7 +43,7 @@
 
         {% block footer %}
         <footer>
-          
+
         </footer>
         {% endblock %}
     </body>
