@@ -25,6 +25,14 @@
             <li class="li-button" onclick="location.href='{{ url_for('newstory.newstory') }}';">
                 New Story
             </li>
+            <li class="li-button"> Dark Mode:
+            </li>
+            <li class="li-button" id="darkmodebutton">
+              <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+              </label>
+            </li>
             {% endif %}
                 {% if not current_user.is_active %}
                 <a href="{{ url_for('login.login') }}">Login</a>
