@@ -1,14 +1,23 @@
 dark_mode = false;
 
-function change_mode(){
-  console.log("Changed!");
-  if (dark_mode==false) {
-    var link = document.getElementById("lightdarkstoryboard"); //Fetch the link by its ID
-    link.setAttribute("href", "{{ url_for('static', filename='styles/storystyle.css') }}"); //Change its href attribute
-    dark_mode = true;
-  } else {
-    var link = document.getElementById("lightdarkstoryboard"); //Fetch the link by its ID
-    link.setAttribute("href", "{{ url_for('static', filename='styles/dark-storystyle.css') }}"); //Change its href attribute
-    dark_mode = false;
-  }
+
+function change_mode() {
+
+    var cssfirstlink = document.getElementsByTagName("link").item(0);
+    if (dark_mode==false) {
+      cssfirstlink.href = "static/styles/dark-storystyle.css";
+      dark_mode = true;
+    } else {
+      cssfirstlink.href = "static/styles/storystyle.css";
+      dark_mode = false;
+    }
 }
+
+// function real_change_mode(to_change) {
+//   var cssfirstlink = document.getElementsByTagName("link").item(0);
+//   if (to_change==true) {
+//     cssfirstlink.href = "static/styles/dark-storystyle.css";
+//   } else {
+//     cssfirstlink.href = "static/styles/storystyle.css";
+//   }
+// }
